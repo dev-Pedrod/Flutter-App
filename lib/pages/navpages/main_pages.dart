@@ -1,4 +1,6 @@
+// libs
 import 'package:flutter/material.dart';
+// pages
 import 'package:flutter_app/pages/navpages/bar_item_page.dart';
 import 'package:flutter_app/pages/navpages/home_page.dart';
 import 'package:flutter_app/pages/navpages/my_page.dart';
@@ -13,10 +15,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    HomePage(),
-    BarItemPage(),
-    SearchPage(),
-    MyPage()
+    const HomePage(),
+    const BarItemPage(),
+    const SearchPage(),
+    const MyPage()
   ];
 
   int currentIndex = 0;
