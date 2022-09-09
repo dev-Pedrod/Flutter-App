@@ -1,9 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 //libs
 import 'package:flutter/material.dart';
 // colors
 import 'package:flutter_app/misc/colors.dart';
 // widgets
 import 'package:flutter_app/widgets/app_large_text.dart';
+import 'package:flutter_app/widgets/app_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -95,16 +98,62 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                         image: const DecorationImage(
-                            image: AssetImage("img/mountain.jpeg"),
-                            fit: BoxFit.cover,
-                            )),
+                          image: AssetImage("img/mountain.jpeg"),
+                          fit: BoxFit.cover,
+                        )),
                   );
                 },
               ),
               const Text("there"),
               const Text("bye"),
             ]),
-          )
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargeText(
+                  text: "Explore more",
+                  size: 22,
+                ),
+                AppText(
+                  text: "See all",
+                  color: AppColors.textColor1,
+                )
+              ],
+            ),
+          ),
+          const SizedBox(height: 10,),
+          Container(
+            height: 100,
+            width: double.maxFinite,
+            margin: const EdgeInsets.only(left: 20),
+            child: ListView.builder(
+              itemCount: 4,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (_, index){
+              return Column(
+                children: [
+                  Container(
+                    width: 80,
+                    height: 80,
+                    margin: const EdgeInsets.only(right: 50,),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        image: const DecorationImage(
+                          image: AssetImage("img/mountain.jpeg"),
+                          fit: BoxFit.cover,
+                        )),
+                  ),
+                ],
+              );
+            }),
+          ),
         ],
       ),
     );
