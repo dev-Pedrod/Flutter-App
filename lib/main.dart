@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/details_pages.dart';
 import 'package:flutter_app/pages/navpages/main_pages.dart';
 import 'package:flutter_app/pages/welcome_page.dart';
 
@@ -16,10 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage()
+      home: const DetailPage()
     );
   }
 }
