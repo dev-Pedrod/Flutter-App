@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/cubit/app_cubits_logics.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_app/cubit/app_cubits.dart';
 import 'package:flutter_app/pages/details_pages.dart';
 import 'package:flutter_app/pages/navpages/main_pages.dart';
 import 'package:flutter_app/pages/welcome_page.dart';
@@ -14,12 +17,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const DetailPage()
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: BlocProvider<AppCubits>(
+          create: (context) => AppCubits(),
+          child: const AppCubitLogics(),
+        ));
   }
 }
